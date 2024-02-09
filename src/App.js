@@ -1,6 +1,8 @@
 import './App.css';
 import api from './api/axiosConfig';
 import {useEffect, useState} from 'react';
+import Formation from './components/Formation';
+import {Router, Routes} from 'react-router-dom';
 
 
 function App() {
@@ -21,6 +23,8 @@ function App() {
   }, [])
   return (
     <div className="App">
+
+    
     
     </div>
   );
