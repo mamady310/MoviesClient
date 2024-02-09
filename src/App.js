@@ -1,17 +1,28 @@
-import logo from './logo.svg';
 import './App.css';
+import api from './api/axiosConfig';
+import {useEffect, useState} from 'react';
+
 
 function App() {
+
+  const[movies, setMovies] = useState();
+
+  const getMovies = async() => {
+    try {
+      const response = await api.get("/api/movies");
+      setMovies(response.data);
+      console.log("data: " + JSON.stringify(response));
+    } catch (error) {
+      console.log(error);
+    } 
+  }
+
+  useEffect(() => {
+    getMovies();
+  }, [])
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <h1>
-        Hello from the outside!!!
-        </h1>
-      
-      
-      </header>
+    
     </div>
   );
 }
