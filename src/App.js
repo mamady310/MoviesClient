@@ -2,7 +2,8 @@ import './App.css';
 import api from './api/axiosConfig';
 import {useEffect, useState} from 'react';
 import Formation from './components/Formation';
-import {Router, Routes} from 'react-router-dom';
+import {Routes, Route} from 'react-router-dom';
+import Home from './components/home/Home';
 
 
 function App() {
@@ -24,7 +25,11 @@ function App() {
   return (
     <div className="App">
 
-    
+    <Routes>
+      <Route path="/" element={<Formation/>}>
+         <Route path="/" element={<Home/>}></Route>
+      </Route>
+    </Routes>
     
     </div>
   );
